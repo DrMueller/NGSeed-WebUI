@@ -1,5 +1,5 @@
 export class SecurityUser {
-  constructor(
+  public constructor(
     public readonly userName: string,
     public readonly isAuthenticated: boolean) {
   }

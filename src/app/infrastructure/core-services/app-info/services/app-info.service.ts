@@ -5,8 +5,8 @@ import { ApplicationInformation } from '../models';
 @Injectable()
 export class AppInfoService {
   public async getAppInfoAsync(): Promise<ApplicationInformation> {
-    var appInfo = new ApplicationInformation();
-    appInfo.applicationTitle = 'Ng-SEED';
+    const appInfo = new ApplicationInformation();
+    appInfo.applicationTitle = 'NG-Seed';
     appInfo.applicationVersion = '1.2.3.4';
     return Promise.resolve(appInfo);
   }

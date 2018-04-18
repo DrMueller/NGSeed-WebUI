@@ -103,7 +103,8 @@ export abstract class HttpBaseService {
     }
   }
 
-  // CAREFUL: Object is important, see here: https://stackoverflow.com/questions/45698594/property-data-does-not-exist-on-type-httpeventcustomer
+  // CAREFUL: Object is important
+  // See here: https://stackoverflow.com/questions/45698594/property-data-does-not-exist-on-type-httpeventcustomer
   private createOptions(contentType?: ContentType | null): object {
     const headers = new HttpHeaders();
 
@@ -120,8 +121,6 @@ export abstract class HttpBaseService {
 
   private createCompleteUrl(relativeUrl: string): string {
     let result = this.baseUrl;
-
-    debugger;
     if (!result.endsWith('/')) {
       result += '/';
     }

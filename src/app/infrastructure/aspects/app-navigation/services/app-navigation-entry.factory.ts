@@ -6,6 +6,7 @@ import { AppNavigationEntry } from '../models';
 
 @Injectable()
 export class AppNavigationEntryFactory {
+  public constructor(private userAuthorizationService: UserRouteAuthorizationService) { }
 
   public createEntries(): AppNavigationEntry[] {
     const result = new Array<AppNavigationEntry>();
@@ -20,6 +21,4 @@ export class AppNavigationEntryFactory {
     const isNavigatable = this.userAuthorizationService.isAuthorizedForRoute(route);
     return new AppNavigationEntry(displayText, route, isNavigatable);
   }
-
-  constructor(private userAuthorizationService: UserRouteAuthorizationService) { }
 }

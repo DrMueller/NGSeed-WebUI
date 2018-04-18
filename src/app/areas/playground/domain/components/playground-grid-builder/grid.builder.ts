@@ -5,7 +5,9 @@ import {
 import { Individual } from '../../models';
 
 export class GridBuilder {
-  public static buildGrid(gridBuilder: GridBuilderService<Individual>, getRowStyleCallback: GetRowStyleCallback<Individual>): Grid<Individual> {
+  public static buildGrid(
+    gridBuilder: GridBuilderService<Individual>,
+    getRowStyleCallback: GetRowStyleCallback<Individual>): Grid<Individual> {
     const result = gridBuilder
       .startBuildingOptions()
       .withAutoSizeColumns(true)
