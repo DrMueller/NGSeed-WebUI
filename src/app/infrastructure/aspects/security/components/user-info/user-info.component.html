@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="dropdown">
+    <button class="btn dropdown-toggle user-info__userinfo-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true"
+      aria-expanded="false">
+      <div class="d-inline-flex">
+        <i aria-hidden="true" class="fa fa-user"></i>
+        <span>&nbsp; &nbsp;</span>
+        <span>{{ securityUser.userName }}</span>
+      </div>
+
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <div *ngIf="!securityUser.isAuthenticated">
+        <button class="dropdown-item" (click)="logInClicked()">Log In</button>
+      </div>
+
+      <div *ngIf="securityUser.isAuthenticated">
+        <button class="dropdown-item" (click)="logOutClicked()">Log Out</button>
+      </div>
+    </div>
+  </div>
+</div>
