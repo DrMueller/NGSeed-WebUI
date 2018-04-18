@@ -5,6 +5,6 @@ export class SecurityUser {
   }
 
   public static createUnauthenticated(): SecurityUser {
-    return new SecurityUser("Guest", false);
+    return new SecurityUser('Guest', false);
   }
 }
