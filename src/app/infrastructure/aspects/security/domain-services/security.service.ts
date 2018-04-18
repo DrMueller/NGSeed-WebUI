@@ -20,7 +20,6 @@ export class SecurityService {
   }
 
   public initialize(): void {
-
     const adalConfig = this.environmentService.adalConfig;
     this.adalService.init(adalConfig);
   }

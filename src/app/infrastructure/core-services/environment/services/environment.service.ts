@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 
 import { environment } from 'app/../environments/environment';
-import { AdalConfig } from '../models';
 
 @Injectable()
 export class EnvironmentService {
@@ -17,8 +16,7 @@ export class EnvironmentService {
     return environment.securityServiceBaseUrl;
   }
 
-  public get adalConfig(): AdalConfig {
-    const config = <AdalConfig>environment.adalConfig;
-    return config;
+  public get adalConfig(): any {
+    return environment.adalConfig;
   }
 }
