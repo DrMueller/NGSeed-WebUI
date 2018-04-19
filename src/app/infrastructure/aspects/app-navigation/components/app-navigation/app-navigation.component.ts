@@ -13,7 +13,7 @@ import { AppNavigationEntryFactory } from '../../services';
 export class AppNavigationComponent implements OnInit {
   public get appInfo(): AppInfo {
     return this.environmentService.appInfo;
-  };
+  }
 
   public appNavigationEntries: AppNavigationEntry[] = [];
 

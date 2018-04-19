@@ -11,7 +11,7 @@ export const environment = {
     }
   },
   appInfo: {
-    appVersion: '1.3.3.7',
+    appVersion: 'BUILD_BUILDNUMBER',
     appName: 'NG-Seed'
   }
 };
