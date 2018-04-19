@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { environment } from 'app/../environments/environment';
+import { AppInfo } from '../models';
 
 @Injectable()
 export class EnvironmentService {
@@ -8,15 +9,19 @@ export class EnvironmentService {
     return environment.production;
   }
 
-  public get microserviceBaseUrl(): string {
-    return environment.microserviceBaseUrl;
-  }
-
-  public get securityServiceBaseUrl(): string {
-    return environment.securityServiceBaseUrl;
+  public get coreServiceBaseUrl(): string {
+    return environment.coreServiceBaseUrl;
   }
 
   public get adalConfig(): any {
     return environment.adalConfig;
+  }
+
+  public get activateSecurity(): boolean {
+    return environment.activateSecurity;
+  }
+
+  public get appInfo(): AppInfo {
+    return <AppInfo>environment.appInfo;
   }
 }

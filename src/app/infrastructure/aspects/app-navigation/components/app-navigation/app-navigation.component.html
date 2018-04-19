@@ -5,10 +5,10 @@
   </button>
 
   <div class="navbar-header">
-    <div *ngIf="applicationInformation">
-      <a class="navbar-brand" href="#">{{ applicationInformation.applicationTitle }}</a>
+    <div *ngIf="appInfo">
+      <a class="navbar-brand" href="#">{{ appInfo.appName }}</a>
       <div class="app-navigation__navbar-header--version-info">
-        <label>{{ applicationInformation.applicationVersion }}</label>
+        <label>{{ appInfo.appVersion }}</label>
       </div>
     </div>
   </div>
@@ -21,7 +21,7 @@
     </div>
   </div>
 
-  <div *ngIf="applicationInformation">
+  <div>
     <div class="nav navbar-nav ml-auto tra">
       <app-user-info>
       </app-user-info>

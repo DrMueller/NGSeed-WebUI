@@ -4,9 +4,9 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
+  activateSecurity: true,
   production: false,
-  microserviceBaseUrl: 'https://localhost:44392/api/',
-  securityServiceBaseUrl: 'https://localhost:44392/api/',
+  coreServiceBaseUrl: 'https://localhost:44392/api/',
   adalConfig: {
     tenant: 'novacapta.de',
     clientId: 'f9aa233a-c9fe-493e-b5d9-0ea2cca7b22f',
@@ -14,5 +14,9 @@ export const environment = {
     endpoints: {
       'https://localhost:44392/': '297fc587-359a-4ea5-9f2d-4b36aef9c3a1'
     }
+  },
+  appInfo: {
+    appVersion: '1.3.3.7',
+    appName: 'NG-Seed'
   }
 };

@@ -3,18 +3,15 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
 import { AdalInterceptor } from 'adal-angular4';
-
 import { ToastModule } from 'ng2-toastr/ng2-toastr';
 
 import { EnumService } from './enums';
 import { EnvironmentService } from './environment';
 import { EventDispatcherService } from './event-dispatching';
 import * as http from './http';
+import { AdalInterceptorProxyService } from './http/services/adal-interceptor-proxy.service';
 import { ObjectFactoryService } from './object-creation';
 import { ToastConfigurationService, ToastService } from './toast/services';
-import { AppInfoService } from './app-info';
-
-// Not adding the mediators as providers here, since they should be used in the components
 
 @NgModule({
   imports: [
@@ -27,14 +24,14 @@ import { AppInfoService } from './app-info';
     ToastService,
     ToastConfigurationService,
     EventDispatcherService,
-    http.PlaygroundHttpService,
+    http.CoreHttpService,
     ObjectFactoryService,
     EnumService,
-    AppInfoService,
+    AdalInterceptor,
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: AdalInterceptor,
-      multi: true
+      useClass: AdalInterceptorProxyService,
+      multi: true,
     }
   ]
 })

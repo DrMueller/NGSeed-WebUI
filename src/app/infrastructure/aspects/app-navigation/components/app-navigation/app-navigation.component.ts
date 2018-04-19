@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AppInfoService, ApplicationInformation } from 'app/infrastructure/core-services/app-info';
+import { AppInfo, EnvironmentService } from 'app/infrastructure/core-services/environment';
 
 import { AppNavigationEntry } from '../../models';
 import { AppNavigationEntryFactory } from '../../services';
@@ -11,14 +11,17 @@ import { AppNavigationEntryFactory } from '../../services';
   styleUrls: ['./app-navigation.component.scss']
 })
 export class AppNavigationComponent implements OnInit {
-  public applicationInformation: ApplicationInformation;
+  public get appInfo(): AppInfo {
+    return this.environmentService.appInfo;
+  };
+
   public appNavigationEntries: AppNavigationEntry[] = [];
 
-  public constructor(private appNavigationService: AppNavigationEntryFactory, private appInfoService: AppInfoService) { }
+  public constructor(
+    private appNavigationService: AppNavigationEntryFactory,
+    private environmentService: EnvironmentService) { }
 
-  public async ngOnInit(): Promise<void> {
+  public ngOnInit(): void {
     this.appNavigationEntries = this.appNavigationService.createEntries();
-    this.applicationInformation = await this.appInfoService.getAppInfoAsync();
   }
-
 }

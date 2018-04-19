@@ -7,11 +7,9 @@ import { Observable } from 'rxjs/Observable';
 import { ObjectFactoryService } from 'app/infrastructure/core-services/object-creation';
 import { IParameterlessConstructor } from 'app/infrastructure/types/interfaces';
 
-import { ApiEndpoint, ContentType } from '../../enums';
+import { ContentType } from '../enums';
 
 export abstract class HttpBaseService {
-  public abstract get apiEndpoint(): ApiEndpoint;
-
   protected constructor(
     private httpClient: HttpClient,
     private objectFactoryService: ObjectFactoryService,
