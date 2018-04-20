@@ -9,7 +9,7 @@ export const environment = {
   coreServiceBaseUrl: 'https://localhost:44392/api/',
   adalConfig: {
     tenant: 'novacapta.de',
-    clientId: 'f9aa233a-c9fe-493e-b5d9-0ea2cca7b22f',
+    clientId: '297fc587-359a-4ea5-9f2d-4b36aef9c3a1',
     redirectUri: 'http://localhost:4200/',
     endpoints: {
       'https://localhost:44392/': '297fc587-359a-4ea5-9f2d-4b36aef9c3a1'
