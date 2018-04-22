@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-
 import * as comp from './domain/components';
 
 const routes: Routes = [
@@ -23,6 +22,13 @@ const routes: Routes = [
       { path: 'comp-com-parent-child', component: comp.PgOrgMainComponent },
       { path: 'reflect', component: comp.PlaygroundReflectComponent },
       { path: 'grid-builder', component: comp.PlaygroundGridBuilderComponent },
+      {
+        path: 'security',
+        children: [
+          { path: 'adusers', component: comp.PlaygroundSecurityAdusersComponent },
+          { path: 'policies', component: comp.PlaygroundSecurityPoliciesComponent },
+        ]
+      }
     ]
   }];
 

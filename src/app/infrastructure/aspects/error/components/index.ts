@@ -1,1 +1,1 @@
-export * from './error-display-content';
+export * from './error-display';

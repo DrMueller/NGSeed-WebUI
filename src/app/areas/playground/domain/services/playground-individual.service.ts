@@ -6,15 +6,15 @@ import { Individual } from '../models';
 
 @Injectable()
 export class PlaygroundIndividualService {
-  constructor(private playgroundHttpservice: CoreHttpService) { }
+  constructor(private coreHttpService: CoreHttpService) { }
 
   public postIndividualAsync(individual: Individual): Promise<Individual> {
     const relativeUrl = 'Individuals';
-    return this.playgroundHttpservice.postAsync(relativeUrl, individual, Individual);
+    return this.coreHttpService.postAsync(relativeUrl, individual, Individual);
   }
 
   public getIndividualsAsync(): Promise<Individual[]> {
     const relativeUrl = 'Individuals';
-    return this.playgroundHttpservice.getArrayAsync(relativeUrl, Individual);
+    return this.coreHttpService.getArrayAsync(relativeUrl, Individual);
   }
 }

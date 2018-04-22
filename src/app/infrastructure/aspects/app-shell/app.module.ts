@@ -5,16 +5,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { SecurityModule } from 'app/infrastructure/aspects/security';
 import { CoreServicesModule } from 'app/infrastructure/core-services';
 import { AgGridBuildingModule } from 'app/infrastructure/shared-features/ag-grid/ag-grid-building';
 import { RxFormsModule } from 'app/infrastructure/shared-features/rx-forms';
-import { SecurityModule } from 'app/infrastructure/aspects/security';
+import { UserManagementModule } from 'app/infrastructure/shared-features/user-management';
 
 import { AppNavigationModule } from '../app-navigation';
 import { ErrorModule } from '../error';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 
 @NgModule({
   declarations: [
@@ -31,7 +31,8 @@ import { AppComponent } from './app.component';
     RxFormsModule.forRoot(),
     AppNavigationModule,
     ErrorModule.forRoot(),
-    AgGridBuildingModule.forRoot()
+    AgGridBuildingModule.forRoot(),
+    UserManagementModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

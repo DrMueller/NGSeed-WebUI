@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { SecurityModule } from 'app/infrastructure/aspects/security';
+import { UserManagementModule } from 'app/infrastructure/shared-features/user-management';
 
 import * as comp from './components';
 import * as serv from './services';
@@ -14,7 +14,7 @@ import * as serv from './services';
   imports: [
     CommonModule,
     RouterModule,
-    SecurityModule
+    UserManagementModule
   ],
   declarations: [
     comp.AppNavigationComponent

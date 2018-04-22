@@ -1,27 +1,36 @@
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewContainerRef } from '@angular/core';
 
-import { ToastConfigurationService } from 'app/infrastructure/core-services/toast/services';
 import { SecurityService } from 'app/infrastructure/aspects/security';
+import { ToastConfigurationService } from 'app/infrastructure/core-services/toast/services';
 
-import { ErrorAppInitializationService } from '../error';
+import { ErrorInformation, ErrorRegistrationService } from '../error';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent implements OnInit {
-  constructor(
-    private errorAppInitializationService: ErrorAppInitializationService,
+  public errorInfo: ErrorInformation | null = null;
+  
+  public constructor(
+    private errorRegistrationService: ErrorRegistrationService,
+    private userSecurityService: SecurityService,
+    private changeDetectorRef: ChangeDetectorRef,
     toastConfigurationService: ToastConfigurationService,
-    viewContainerRef: ViewContainerRef,
-    private userSecurityService: SecurityService) {
-    this.errorAppInitializationService.initialize();
+    viewContainerRef: ViewContainerRef) {
+    this.errorRegistrationService.registerErrorCallback((errorInfo) => this.onErrorReceived(errorInfo));
     toastConfigurationService.setContainer(viewContainerRef);
     this.userSecurityService.initialize();
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.userSecurityService.handleCallback();
+  }
+
+  private onErrorReceived(errorInfo: ErrorInformation) {
+    this.errorInfo = errorInfo;
+    this.changeDetectorRef.detectChanges();
   }
 }

@@ -1,0 +1,25 @@
+<div *ngIf="!!errorInfo">
+  <p-dialog (onHide)="onHiding()" [(visible)]="!!errorInfo" [autoAlign]="true" modal="modal" [responsive]="true" [width]="450">
+    <p-header>
+      Error Ho!
+    </p-header>
+
+    <div class="row">
+      <label class="col-md-3">Error-Name</label>
+      <div class="col-md-9">
+        <label class="info-label">{{ errorInfo.errorName }} </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <label class="col-md-3">Message</label>
+      <div class="col-md-9">
+        <span>{{ errorInfo.errorMessage }}</span>
+      </div>
+    </div>
+
+    <p-footer>
+      <button type="button" class="btn btn-secondary" (click)="closeClicked()">Close</button>
+    </p-footer>
+  </p-dialog>
+</div>

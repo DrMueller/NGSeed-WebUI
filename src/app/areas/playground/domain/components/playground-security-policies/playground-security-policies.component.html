@@ -1,0 +1,43 @@
+<div class="pgsc__commandcontainer">
+  <div class="row">
+    <p>
+      Checks for the existence of the GivenName Claim. It should return OK, since everybody has this Claim.
+    </p>
+  </div>
+  <div class="row">
+    <p>
+      Result: {{ givenNamePolicyResult }}
+    </p>
+  </div>
+  <div class="row">
+    <button (click)="givenNamePolicyClicked()" class="btn btn-primary">Do it!</button>
+  </div>
+</div>
+
+<div class="pgsc__commandcontainer">
+  <div class="row">
+    <p>
+      This checks for the name Claim with the value 'm.mueller@novacapta.com'.
+    </p>
+  </div>
+  <div class="row">
+    <p>
+      Result: {{ nameMathiasMuellerResult }}
+    </p>
+  </div>
+  <div class="row">
+    <button (click)="nameMatthiasMuellerPolicyClicked()" class="btn btn-primary">Do it!</button>
+  </div>
+</div>
+
+<div class="pgsc__commandcontainer">
+  <div class="row">
+    <p>
+      This should always return unouthorized, therefore throwing a error with a 403.
+    </p>
+  </div>
+
+  <div class="row">
+    <button (click)="neverFullFilledPolicyClicked()" class="btn btn-primary">Do it!</button>
+  </div>
+</div>

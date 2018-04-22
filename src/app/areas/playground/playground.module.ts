@@ -44,10 +44,12 @@ import { PlaygroundRoutingModule } from './playground-routing.module';
     comp.PgOrgHqComponent,
     comp.PgOrgAddressComponent,
     comp.PlaygroundReflectComponent,
-    comp.PlaygroundGridBuilderComponent
+    comp.PlaygroundGridBuilderComponent,
+    comp.PlaygroundSecurityAdusersComponent,
+    comp.PlaygroundSecurityPoliciesComponent
   ],
   providers: [
-    serv.PlaygroundIndividualService
+    serv.PlaygroundIndividualService,
   ]
 })
 export class PlaygroundModule { }

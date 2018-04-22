@@ -9,7 +9,6 @@ import { EnvironmentService } from 'app/infrastructure/core-services/environment
 @Injectable()
 export class AdalInterceptorProxyService implements HttpInterceptor {
   public constructor(private adalInterceptor: AdalInterceptor, private environmentService: EnvironmentService) {
-
   }
 
   public intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {

@@ -1,5 +1,8 @@
 import { NgModule, ModuleWithProviders, ErrorHandler } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';  //<<<< import it here
+
+import { DialogModule, InputTextareaModule } from 'primeng/primeng';
 
 import { NgProvideUtils } from 'app/infrastructure/utils';
 
@@ -7,14 +10,17 @@ import * as comp from './components';
 import * as serv from './services';
 
 @NgModule({
-  entryComponents: [
-    comp.ErrorDisplayContentComponent
-  ],
   imports: [
-    CommonModule
+    CommonModule,
+    DialogModule,
+    InputTextareaModule,
+    FormsModule
+  ],
+  exports: [
+    comp.ErrorDisplayComponent
   ],
   declarations: [
-    comp.ErrorDisplayContentComponent
+    comp.ErrorDisplayComponent
   ]
 })
 export class ErrorModule {
@@ -23,10 +29,10 @@ export class ErrorModule {
       ngModule: ErrorModule,
       providers: [
         serv.ErrorRegistrationService,
-        serv.ErrorDispatcherService,
-        serv.ErrorDisplayService,
-        serv.ErrorAppInitializationService,
-        NgProvideUtils.provideClass(ErrorHandler, serv.GlobalErrorCatcherService)
+        serv.ErrorInformationFactoryService,
+        serv.ErrorUnwrappingService,
+        serv.IgnoredErrorsService,
+        NgProvideUtils.provideClass(ErrorHandler, serv.ErrorHandlingService),
       ]
     };
   }
