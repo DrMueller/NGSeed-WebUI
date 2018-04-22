@@ -13,7 +13,7 @@ import { ErrorInformation, ErrorRegistrationService } from '../error';
 
 export class AppComponent implements OnInit {
   public errorInfo: ErrorInformation | null = null;
-  
+
   public constructor(
     private errorRegistrationService: ErrorRegistrationService,
     private userSecurityService: SecurityService,

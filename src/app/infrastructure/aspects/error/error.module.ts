@@ -1,6 +1,6 @@
-import { NgModule, ModuleWithProviders, ErrorHandler } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';  //<<<< import it here
+import { ErrorHandler, ModuleWithProviders, NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { DialogModule, InputTextareaModule } from 'primeng/primeng';
 
