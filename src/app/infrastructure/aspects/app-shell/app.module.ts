@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 import { SecurityModule } from 'app/infrastructure/aspects/security';
 import { CoreServicesModule } from 'app/infrastructure/core-services';
 import { AgGridBuildingModule } from 'app/infrastructure/shared-features/ag-grid/ag-grid-building';
@@ -24,7 +22,6 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     CommonModule,
     FormsModule,
-    NgbModule.forRoot(),
     SecurityModule.forRoot(),
     AppRoutingModule,
     CoreServicesModule,
@@ -37,4 +34,5 @@ import { AppComponent } from './app.component';
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

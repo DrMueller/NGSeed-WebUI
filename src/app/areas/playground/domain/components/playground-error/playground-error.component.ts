@@ -1,18 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
+import { CoreHttpService } from 'app/infrastructure/core-services/http';
 
 @Component({
   selector: 'app-playground-error',
   templateUrl: './playground-error.component.html',
   styleUrls: ['./playground-error.component.scss']
 })
-export class PlaygroundErrorComponent implements OnInit {
+export class PlaygroundErrorComponent {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  constructor(private coreHttpService: CoreHttpService) { }
 
   public throwErrorClicked(): void {
     throw new Error('Hello from the Playground.');
+  }
+
+  public forceErrorFromServerClicked(): void {
+    const relativeUrl = 'Individuals/Error';
+    this.coreHttpService.getAsync(relativeUrl);
   }
 }
