@@ -18,7 +18,7 @@ export class ErrorHandlingService implements ErrorHandler {
   public handleError(error: any): void {
     const unpackedError = this.errorUnwrappingService.unwrapError(error);
     console.log(unpackedError);
-    
+
     if (this.ignoredErrorsService.isIgnoredError(unpackedError)) {
       return;
     }

@@ -19,7 +19,7 @@ export class BreadcrumbsDisplayComponent implements OnInit {
     return <MenuItem>{
       icon: 'fa fa-home',
       routerLink: ['/home']
-    }
+    };
   }
 
   public constructor(
