@@ -16,7 +16,10 @@ const routes: Routes = [
   {
     path: 'playground',
     loadChildren: 'app/areas/playground/playground.module#PlaygroundModule',
-    canActivate: [AuthorizationGuard]
+    canActivate: [AuthorizationGuard],
+    data: {
+      breadcrumb: 'Playground'
+    }
   },
 ];
 

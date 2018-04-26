@@ -14,6 +14,8 @@ import { ErrorModule } from '../error';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { BreadcrumbsModule } from '../breadcrumbs';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -29,7 +31,8 @@ import { AppComponent } from './app.component';
     AppNavigationModule,
     ErrorModule.forRoot(),
     AgGridBuildingModule.forRoot(),
-    UserManagementModule.forRoot()
+    UserManagementModule.forRoot(),
+    BreadcrumbsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

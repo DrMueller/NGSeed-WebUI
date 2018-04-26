@@ -46,10 +46,14 @@ import { PlaygroundRoutingModule } from './playground-routing.module';
     comp.PlaygroundReflectComponent,
     comp.PlaygroundGridBuilderComponent,
     comp.PlaygroundSecurityAdusersComponent,
-    comp.PlaygroundSecurityPoliciesComponent
+    comp.PlaygroundSecurityPoliciesComponent,
+    comp.PlaygroundBreadcrumb1Component,
+    comp.PlaygroundBreadcrumb2Component,
+    comp.PlaygroundBreadcrumb3Component,
+    comp.PlaygroundBreadcrumbsComponent
   ],
   providers: [
-    serv.PlaygroundIndividualService,
+    serv.PlaygroundIndividualService
   ]
 })
 export class PlaygroundModule { }

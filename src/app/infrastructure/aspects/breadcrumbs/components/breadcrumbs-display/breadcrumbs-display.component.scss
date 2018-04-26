@@ -1,0 +1,10 @@
+@import "../../../../../../styles/_variables";
+
+:host ::ng-deep .ui-state-active {
+  color: $navbar-inverse-active-color;
+  background-color: #333333;
+}
+
+:host ::ng-deep .ui-widget {
+  font-family: $font-family-base;
+}
