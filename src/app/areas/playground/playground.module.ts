@@ -9,8 +9,8 @@ import { RxFormsModule } from 'app/infrastructure/shared-features/rx-forms';
 import { CollapsibleCardModule } from 'app/infrastructure/widgets/collapsible-card';
 import { SelectModule } from 'app/infrastructure/widgets/select';
 
-import * as comp from './domain/components';
-import * as serv from './domain/services';
+import * as components from './components';
+import * as services from './services';
 import { PlaygroundRoutingModule } from './playground-routing.module';
 
 @NgModule({
@@ -23,37 +23,37 @@ import { PlaygroundRoutingModule } from './playground-routing.module';
     SharedModule,
     RxFormsModule,
     AgGridModule.withComponents([
-      comp.PlaygroundGridBuilderComponent
+      components.PlaygroundGridBuilderComponent
     ]),
     SecurityModule
   ],
   declarations: [
-    comp.PlaygroundComponent,
-    comp.PlaygroundOverviewComponent,
-    comp.PlaygroundCollapsibleCardComponent,
-    comp.PlaygroundSelectComponent,
-    comp.PlaygroundPrimengEditorComponent,
-    comp.PlaygroundRxFormComponent,
-    comp.PlaygroundEnumSelectComponent,
-    comp.PlaygroundErrorComponent,
-    comp.PlaygroundRxFormControlWithValidationComponent,
-    comp.PlaygroundServerGetComponent,
-    comp.PlaygroundServerPostComponent,
-    comp.PgOrgMainComponent,
-    comp.PgOrgAddressComponent,
-    comp.PgOrgHqComponent,
-    comp.PgOrgAddressComponent,
-    comp.PlaygroundReflectComponent,
-    comp.PlaygroundGridBuilderComponent,
-    comp.PlaygroundSecurityAdusersComponent,
-    comp.PlaygroundSecurityPoliciesComponent,
-    comp.PlaygroundBreadcrumb1Component,
-    comp.PlaygroundBreadcrumb2Component,
-    comp.PlaygroundBreadcrumb3Component,
-    comp.PlaygroundBreadcrumbsComponent
+    components.PlaygroundComponent,
+    components.PlaygroundOverviewComponent,
+    components.PlaygroundCollapsibleCardComponent,
+    components.PlaygroundSelectComponent,
+    components.PlaygroundPrimengEditorComponent,
+    components.PlaygroundRxFormComponent,
+    components.PlaygroundEnumSelectComponent,
+    components.PlaygroundErrorComponent,
+    components.PlaygroundRxFormControlWithValidationComponent,
+    components.PlaygroundServerGetComponent,
+    components.PlaygroundServerPostComponent,
+    components.PgOrgMainComponent,
+    components.PgOrgAddressComponent,
+    components.PgOrgHqComponent,
+    components.PgOrgAddressComponent,
+    components.PlaygroundReflectComponent,
+    components.PlaygroundGridBuilderComponent,
+    components.PlaygroundSecurityAdusersComponent,
+    components.PlaygroundSecurityPoliciesComponent,
+    components.PlaygroundBreadcrumb1Component,
+    components.PlaygroundBreadcrumb2Component,
+    components.PlaygroundBreadcrumb3Component,
+    components.PlaygroundBreadcrumbsComponent
   ],
   providers: [
-    serv.PlaygroundIndividualService
+    services.PlaygroundIndividualService
   ]
 })
 export class PlaygroundModule { }

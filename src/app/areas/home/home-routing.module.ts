@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import * as comp from './domain/components';
+import * as components from './components';
 
 const routes: Routes = [
   {
     path: '',
-    component: comp.HomeComponent,
+    component: components.HomeComponent,
     children: [
       { path: '', redirectTo: 'hello', pathMatch: 'full' },
-      { path: 'hello', component: comp.HelloNgComponent },
+      { path: 'hello', component: components.HelloNgComponent },
     ]
   }];
 
