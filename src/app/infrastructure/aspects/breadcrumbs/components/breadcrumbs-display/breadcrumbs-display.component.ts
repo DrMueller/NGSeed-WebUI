@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { BreadcrumbRouteFetchingService, BreadcrumbMenuItemAdapterService } from '../../services';
-import { BreadcrumbEntry } from '../../models';
 import { MenuItem } from 'primeng/api';
 
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/distinctUntilChanged';
+import { BreadcrumbEntry } from '../../models';
+import { BreadcrumbMenuItemAdapterService, BreadcrumbRouteFetchingService } from '../../services';
 
 @Component({
   selector: 'app-breadcrumbs-display',

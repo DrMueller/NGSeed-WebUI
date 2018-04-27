@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-playground-breadcrumb3',
   templateUrl: './playground-breadcrumb3.component.html',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlaygroundBreadcrumb3Component implements OnInit {
 
-  constructor() { }
+  public someId: number;
 
-  ngOnInit() {
+  public constructor(
+    private route: ActivatedRoute) { }
+
+  public ngOnInit() {
+    this.initializeRoutes();
   }
 
+  private initializeRoutes(): void {
+    this.route.params.subscribe(params => {
+      this.someId = +params['someId']; // (+) converts string 'id' to a number
+    });
+  }
 }

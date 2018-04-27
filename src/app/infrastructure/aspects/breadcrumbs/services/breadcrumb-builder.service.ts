@@ -1,29 +1,26 @@
 import { Injectable } from '@angular/core';
-
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRouteSnapshot } from '@angular/router';
 
 import { BreadcrumbEntry, BreadcrumbRouteConfig } from '../models';
 
 @Injectable()
 export class BreadcrumbBuilderService {
-
-  constructor(private route: ActivatedRoute) { }
-
-  public buildBreadCrumbs(): BreadcrumbEntry[] {
+  public buildBreadCrumbs(route: ActivatedRouteSnapshot): BreadcrumbEntry[] {
     const result = new Array<BreadcrumbEntry>();
-    this.buildBreadCrumbsRecursive(this.route.root, '', result);
+    this.buildBreadCrumbsRecursive(route.root, '', result);
 
     return result;
   }
 
   private buildBreadCrumbsRecursive(
-    route: ActivatedRoute,
+    route: ActivatedRouteSnapshot,
     previousUrl: string,
     breadcrumbs: Array<BreadcrumbEntry>): void {
 
     let currentUrl = previousUrl;
     if (route.routeConfig && route.routeConfig.path) {
-      currentUrl = `${currentUrl}${route.routeConfig.path}/`;
+      const combinedUrl = route.url.map(segment => segment.path).join("/");
+      currentUrl = `${currentUrl}${combinedUrl}/`;
 
       if (route.routeConfig.data && route.routeConfig.data['breadcrumbConfig']) {
         const config = <BreadcrumbRouteConfig>route.routeConfig.data!['breadcrumbConfig'];

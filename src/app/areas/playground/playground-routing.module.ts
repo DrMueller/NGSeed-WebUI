@@ -56,7 +56,7 @@ const routes: Routes = [
                 component: components.PlaygroundBreadcrumb2Component,
                 children: [
                   {
-                    path: 'bc3',
+                    path: ':someId/bc3',
                     component: components.PlaygroundBreadcrumb3Component,
                     data: {
                       breadcrumbConfig: new BreadcrumbRouteConfig('Breadcrumb 3')
