@@ -19,7 +19,7 @@ export class BreadcrumbBuilderService {
 
     let currentUrl = previousUrl;
     if (route.routeConfig && route.routeConfig.path) {
-      const combinedUrl = route.url.map(segment => segment.path).join("/");
+      const combinedUrl = route.url.map(segment => segment.path).join('/');
       currentUrl = `${currentUrl}${combinedUrl}/`;
 
       if (route.routeConfig.data && route.routeConfig.data['breadcrumbConfig']) {
