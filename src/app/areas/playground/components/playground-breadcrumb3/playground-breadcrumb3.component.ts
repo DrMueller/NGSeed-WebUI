@@ -8,7 +8,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./playground-breadcrumb3.component.scss']
 })
 export class PlaygroundBreadcrumb3Component implements OnInit {
-
   public someId: number;
 
   public constructor(
@@ -20,7 +19,7 @@ export class PlaygroundBreadcrumb3Component implements OnInit {
 
   private initializeRoutes(): void {
     this.route.params.subscribe(params => {
-      this.someId = +params['someId']; // (+) converts string 'id' to a number
+      this.someId = +params['someId'];
     });
   }
 }
