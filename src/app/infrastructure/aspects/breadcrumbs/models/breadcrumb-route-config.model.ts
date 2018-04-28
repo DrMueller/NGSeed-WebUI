@@ -1,3 +1,7 @@
 export class BreadcrumbRouteConfig {
-  public constructor(public label: string) { }
+  private constructor(public label: string) { }
+
+  public static create(label: string): BreadcrumbRouteConfig {
+    return new BreadcrumbRouteConfig(label);
+  }
 }

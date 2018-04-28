@@ -41,14 +41,14 @@ const routes: Routes = [
         path: 'bcs',
         component: components.PlaygroundBreadcrumbsComponent,
         data: {
-          breadcrumbConfig: new BreadcrumbRouteConfig('Breadcrumbs')
+          breadcrumbConfig: BreadcrumbRouteConfig.create('Breadcrumbs')
         },
         children: [
           {
             path: 'bc1',
             component: components.PlaygroundBreadcrumb1Component,
             data: {
-              breadcrumbConfig: new BreadcrumbRouteConfig('Breadcrumb 1')
+              breadcrumbConfig: BreadcrumbRouteConfig.create('Breadcrumb 1')
             },
             children: [
               {
@@ -59,7 +59,7 @@ const routes: Routes = [
                     path: ':someId/bc3',
                     component: components.PlaygroundBreadcrumb3Component,
                     data: {
-                      breadcrumbConfig: new BreadcrumbRouteConfig('Breadcrumb 3')
+                      breadcrumbConfig: BreadcrumbRouteConfig.create('Breadcrumb 3')
                     }
                   }
                 ]
