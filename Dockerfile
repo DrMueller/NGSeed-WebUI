@@ -19,7 +19,6 @@ RUN $(npm bin)/ng build --prod --build-optimizer
 
 
 ### STAGE 2: Setup ###
-
 FROM nginx:1.13.3-alpine
 
 ## Copy our default nginx config
