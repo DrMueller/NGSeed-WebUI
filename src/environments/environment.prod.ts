@@ -5,7 +5,7 @@ export const environment = {
   adalConfig: {
     tenant: 'novacapta.de',
     clientId: '297fc587-359a-4ea5-9f2d-4b36aef9c3a1',
-    redirectUri: 'https://ngseed-webui.azurewebsites.net/',
+    redirectUri: 'http://drmueller.westeurope.cloudapp.azure.com:8080/',
     endpoints: {
       'https://ngseed-backend.azurewebsites.net/': '297fc587-359a-4ea5-9f2d-4b36aef9c3a1'
     }
@@ -15,3 +15,5 @@ export const environment = {
     appName: 'NG-Seed'
   }
 };
+
+
