@@ -1,7 +1,7 @@
 export const environment = {
   activateSecurity: true,
   production: true,
-  coreServiceBaseUrl: 'https://ngseed-backend.azurewebsites.net/api',
+  coreServiceBaseUrl: 'http://drmueller.westeurope.cloudapp.azure.com:8081/api',
   adalConfig: {
     tenant: 'novacapta.de',
     clientId: '297fc587-359a-4ea5-9f2d-4b36aef9c3a1',
