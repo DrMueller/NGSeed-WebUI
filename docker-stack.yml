@@ -1,0 +1,12 @@
+﻿version: "3"
+
+services:
+  ngseed-backend:
+    image: drmueller/ngseed-webui:latest
+    environment:
+      - ASPNETCORE_ENVIRONMENT=local
+    ports:
+      - 8080:80
+    deploy:
+      replicas: 2
+
