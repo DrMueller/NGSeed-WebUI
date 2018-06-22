@@ -1,8 +1,8 @@
 ﻿version: "3"
 
 services:
-  ngseed-backend:
-    image: drmueller/ngseed-webui:latest
+  ngseed-webui:
+    image: drmueller/ngseed-webui:__BuildNumber__
     environment:
       - ASPNETCORE_ENVIRONMENT=local
     ports:
