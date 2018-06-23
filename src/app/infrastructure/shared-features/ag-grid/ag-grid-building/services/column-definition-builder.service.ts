@@ -52,7 +52,7 @@ export class ColumnDefinitionBuilderService<TModel extends object> implements IC
 
   private setColDefDefaults(): void {
     this._colDef.cellStyle = { 'border-style': 'none' };
-    this._colDef.suppressMenu = true;
+    this._colDef.suppressMenu = false;
     this._colDef.suppressSorting = true;
     this._colDef.suppressSizeToFit = false;
   }
