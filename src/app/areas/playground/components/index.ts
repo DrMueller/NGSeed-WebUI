@@ -18,3 +18,4 @@ export * from './playground-breadcrumb1';
 export * from './playground-breadcrumb2';
 export * from './playground-breadcrumb3';
 export * from './playground-breadcrumbs';
+export * from './playground-directives';

@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col">
+    <button class="btn btn-primary" (click)="switchIndicator()">
+      <span appBusyIndicator [isBusyIndicatorShown]="isBusyIndicatorShown"></span>
+      <label>Click me!</label>
+    </button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <app-busy-indicator-button buttonClass="btn btn-secondary" [isBusyIndicatorShown]="isBusyIndicator2Shown" (buttonClick)="switchIndicator2()">
+      <label>Click me also!</label>
+    </app-busy-indicator-button>
+  </div>
+</div>

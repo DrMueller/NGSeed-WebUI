@@ -5,7 +5,9 @@ import { AgGridModule } from 'ag-grid-angular/main';
 import { EditorModule, SharedModule } from 'primeng/primeng';
 
 import { SecurityModule } from 'app/infrastructure/aspects/security';
+import { BusyIndicatorModule } from 'app/infrastructure/directives/busy-indicator';
 import { RxFormsModule } from 'app/infrastructure/shared-features/rx-forms';
+import { BusyIndicatorButtonModule } from 'app/infrastructure/widgets/busy-indicator-button';
 import { CollapsibleCardModule } from 'app/infrastructure/widgets/collapsible-card';
 import { SelectModule } from 'app/infrastructure/widgets/select';
 
@@ -25,7 +27,9 @@ import { PlaygroundRoutingModule } from './playground-routing.module';
     AgGridModule.withComponents([
       components.PlaygroundGridBuilderComponent
     ]),
-    SecurityModule
+    SecurityModule,
+    BusyIndicatorModule,
+    BusyIndicatorButtonModule
   ],
   declarations: [
     components.PlaygroundComponent,
@@ -50,7 +54,8 @@ import { PlaygroundRoutingModule } from './playground-routing.module';
     components.PlaygroundBreadcrumb1Component,
     components.PlaygroundBreadcrumb2Component,
     components.PlaygroundBreadcrumb3Component,
-    components.PlaygroundBreadcrumbsComponent
+    components.PlaygroundBreadcrumbsComponent,
+    components.PlaygroundDirectivesComponent
   ],
   providers: [
     services.PlaygroundIndividualService

@@ -30,6 +30,7 @@ const routes: Routes = [
       { path: 'comp-com-parent-child', component: components.PgOrgMainComponent },
       { path: 'reflect', component: components.PlaygroundReflectComponent },
       { path: 'grid-builder', component: components.PlaygroundGridBuilderComponent },
+      { path: 'directives', component: components.PlaygroundDirectivesComponent },
       {
         path: 'security',
         children: [
