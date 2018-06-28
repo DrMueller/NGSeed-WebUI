@@ -1,10 +1,14 @@
 <div>
   <div class="row">
-    <div class="col-5">
+    <div class="col">
       <button class="btn btn-primary" (click)="addRowClicked()">Add Row</button>
       <button class="btn btn-primary" (click)="removeRowClicked()">Remove Row</button>
       <button class="btn btn-primary" (click)="changePropertyClicked()">Change property</button>
       <button class="btn btn-primary" (click)="changeAllClicked()">Change All</button>
+    </div>
+
+    <div class="col text-right">
+      <input class="facts-overview__search-inputs" [(ngModel)]="searchText">
     </div>
   </div>
 

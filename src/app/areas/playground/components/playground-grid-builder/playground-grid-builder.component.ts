@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {
-  Grid, GridBuilderService, RowStyleObject
+    Grid, GridBuilderService, RowStyleObject
 } from 'app/infrastructure/shared-features/ag-grid/ag-grid-building';
 
 import { Individual } from '../../models';
@@ -14,12 +14,35 @@ import { GridBuilder } from './grid.builder';
 })
 export class PlaygroundGridBuilderComponent implements OnInit {
   public grid: Grid<Individual>;
+  private _searchText: string;
 
-  constructor(
+  public constructor(
     private gridBuilder: GridBuilderService<Individual>) {
   }
 
-  ngOnInit() {
+  public addRowClicked(): void {
+    const ind = new Individual();
+    ind.lastName = 'Lannister';
+    ind.firstName = 'Tyrion';
+    ind.id = 'z1324';
+    this.grid.entries.push(ind);
+  }
+
+  public changeAllClicked(): void {
+    this.grid.entries.forEach(f => {
+      f.lastName = f.lastName + ' Updated!';
+    });
+  }
+
+  public changePropertyClicked(): void {
+    this.grid.entries[0].firstName = this.grid.entries[0].firstName + '2';
+  }
+
+  public get searchText(): string {
+    return this._searchText;
+  }
+
+  public ngOnInit() {
     this.grid = GridBuilder.buildGrid(this.gridBuilder, this.getGridRowStyle.bind(this));
     const individuals = Individual.createSome();
     this.grid.initializeEntries(individuals);
@@ -29,22 +52,21 @@ export class PlaygroundGridBuilderComponent implements OnInit {
     this.grid.entries.splice(0, 1);
   }
 
-  public changePropertyClicked(): void {
-    this.grid.entries[0].firstName = this.grid.entries[0].firstName + '2';
+  public set searchText(value: string) {
+    this._searchText = value.toLowerCase();
+    this.grid.filterEntries(entry => this.filterEntry(entry));
   }
 
-  public changeAllClicked(): void {
-    this.grid.entries.forEach(f => {
-      f.lastName = f.lastName + ' Updated!';
-    });
-  }
+  private filterEntry(entry: Individual): boolean {
+    if (entry.firstName!.toLocaleLowerCase().indexOf(this._searchText) > -1) {
+      return true;
+    }
 
-  public addRowClicked(): void {
-    const ind = new Individual();
-    ind.lastName = 'Lannister';
-    ind.firstName = 'Tyrion';
-    ind.id = 'z1324';
-    this.grid.entries.push(ind);
+    if (entry.lastName!.toLocaleLowerCase().indexOf(this._searchText) > -1) {
+      return true;
+    }
+
+    return false;
   }
 
   private getGridRowStyle(row: RowStyleObject<Individual>): any {

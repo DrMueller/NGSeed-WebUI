@@ -14,5 +14,4 @@ export class BusyIndicatorButtonComponent {
   public internalClick(): void {
     this.buttonClick.emit();
   }
-
 }
