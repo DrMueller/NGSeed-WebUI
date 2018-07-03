@@ -28,27 +28,25 @@ export class ObjectFactoryService {
   }
 
   private mapDefinedProperties<T>(source: Object, target: T): void {
-    const targetProperties = Object.getOwnPropertyNames(target);
+    const sourceProperties = Object.getOwnPropertyNames(source);
 
-    targetProperties.forEach(targetPropKey => {
-      if (source.hasOwnProperty(targetPropKey)) {
-        const sourceProp = this.getSourceProperty(target, source, targetPropKey);
-        target[targetPropKey] = sourceProp;
-      }
+    sourceProperties.forEach(sourcePropKey => {
+      const targetProp = this.getSourceProperty(source, target, sourcePropKey);
+      target[sourcePropKey] = targetProp;
     });
   }
 
-  private getSourceProperty<T>(target: T, source: any, targetPropKey: string): any {
-    const sourceProp = source[targetPropKey];
-    const ctor = <IParameterlessConstructor<any>>Reflect.getMetadata(CTOR_PROP_KEY_PREFIX, target, targetPropKey);
+  private getSourceProperty<T>(source: any, target: T, sourcePropertyKey: string): any {
+    const sourcePropertyValue = source[sourcePropertyKey];
+    const ctor = <IParameterlessConstructor<any>>Reflect.getMetadata(CTOR_PROP_KEY_PREFIX, target, sourcePropertyKey);
 
     if (ObjectUtils.isNullOrUndefined(ctor)) {
-      return sourceProp;
+      return sourcePropertyValue;
     }
 
-    if (sourceProp instanceof Array) {
+    if (sourcePropertyValue instanceof Array) {
       const result = new Array();
-      const sourceArray = <Array<any>>sourceProp;
+      const sourceArray = <Array<any>>sourcePropertyValue;
 
       sourceArray.forEach(sourceElement => {
         const targetObj = new ctor();
@@ -59,9 +57,8 @@ export class ObjectFactoryService {
       return result;
     } else {
       const targetObj = new ctor();
-      this.mapDefinedProperties(sourceProp, targetObj);
+      this.mapDefinedProperties(sourcePropertyValue, targetObj);
       return targetObj;
     }
   }
-
 }
