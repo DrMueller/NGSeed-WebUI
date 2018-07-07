@@ -1,6 +1,6 @@
 import { FormGroup } from '@angular/forms';
 
-import 'rxjs/add/operator/debounceTime';
+import { debounceTime } from 'rxjs/operators';
 
 import { FormValidationService } from '../../form-validation';
 import { IFormWatchingBuilder, IRxFormBuilder } from '../interfaces';
@@ -20,7 +20,9 @@ export class FormWatchingBuilder implements IFormWatchingBuilder {
   }
 
   buildFormWatcher(): IRxFormBuilder {
-    this.formGroup.valueChanges.debounceTime(this.debounceMilliseconds).subscribe(() => {
+    this.formGroup.valueChanges.pipe(
+      debounceTime(this.debounceMilliseconds)
+    ).subscribe(() => {
       this.formValidationService.validate();
     });
 

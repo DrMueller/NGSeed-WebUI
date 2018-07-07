@@ -1,7 +1,6 @@
-import { ChangeDetectorRef, Component, OnInit, ViewContainerRef } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 
 import { SecurityService } from 'app/infrastructure/aspects/security';
-import { ToastConfigurationService } from 'app/infrastructure/core-services/toast/services';
 
 import { ErrorInformation, ErrorRegistrationService } from '../error';
 
@@ -17,11 +16,8 @@ export class AppComponent implements OnInit {
   public constructor(
     private errorRegistrationService: ErrorRegistrationService,
     private userSecurityService: SecurityService,
-    private changeDetectorRef: ChangeDetectorRef,
-    toastConfigurationService: ToastConfigurationService,
-    viewContainerRef: ViewContainerRef) {
+    private changeDetectorRef: ChangeDetectorRef) {
     this.errorRegistrationService.registerErrorCallback((errorInfo) => this.onErrorReceived(errorInfo));
-    toastConfigurationService.setContainer(viewContainerRef);
     this.userSecurityService.initialize();
   }
 

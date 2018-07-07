@@ -1,6 +1,6 @@
 import {
   Grid, GridBuilderService, GetRowStyleCallback
-} from 'app/infrastructure/shared-features/ag-grid/ag-grid-building';
+} from 'app/infrastructure/shared-features/ag-grid';
 
 import { Individual } from '../../models';
 

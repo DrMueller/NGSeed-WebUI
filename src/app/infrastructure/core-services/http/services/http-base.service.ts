@@ -1,8 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/toPromise';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs/internal/Observable';
+import { map } from 'rxjs/operators';
 
 import { ObjectFactoryService } from 'app/infrastructure/core-services/object-creation';
 import { IParameterlessConstructor } from 'app/infrastructure/types/interfaces';
@@ -82,10 +81,12 @@ export abstract class HttpBaseService {
     let mappedResult = response;
 
     if (ctor) {
-      mappedResult = mappedResult.map(f => {
-        const newObj = this.objectFactoryService.create(f, ctor);
-        return newObj;
-      });
+      mappedResult = mappedResult.pipe(
+        map(f => {
+          const newObj = this.objectFactoryService.create(f, ctor);
+          return newObj;
+        })
+      );
     }
 
     const result = mappedResult.toPromise();

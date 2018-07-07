@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { SecurityModule } from 'app/infrastructure/aspects/security';
 import { CoreServicesModule } from 'app/infrastructure/core-services';
-import { AgGridBuildingModule } from 'app/infrastructure/shared-features/ag-grid/ag-grid-building';
+import { AgGridModule } from 'app/infrastructure/shared-features/ag-grid';
 import { RxFormsModule } from 'app/infrastructure/shared-features/rx-forms';
 import { UserManagementModule } from 'app/infrastructure/shared-features/user-management';
 
@@ -30,7 +30,7 @@ import { BreadcrumbsModule } from '../breadcrumbs';
     RxFormsModule.forRoot(),
     AppNavigationModule,
     ErrorModule.forRoot(),
-    AgGridBuildingModule.forRoot(),
+    AgGridModule.forRoot(),
     UserManagementModule.forRoot(),
     BreadcrumbsModule
   ],

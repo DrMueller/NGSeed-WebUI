@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { AgGridModule } from 'ag-grid-angular/main';
-import { EditorModule, SharedModule } from 'primeng/primeng';
+import { EditorModule, SharedModule, BreadcrumbModule } from 'primeng/primeng';
 
 import { SecurityModule } from 'app/infrastructure/aspects/security';
 import { BusyIndicatorModule } from 'app/infrastructure/directives/busy-indicator';
@@ -20,6 +20,7 @@ import { PlaygroundRoutingModule } from './playground-routing.module';
     CommonModule,
     PlaygroundRoutingModule,
     CollapsibleCardModule,
+    BreadcrumbModule,
     SelectModule,
     EditorModule,
     SharedModule,
@@ -55,7 +56,8 @@ import { PlaygroundRoutingModule } from './playground-routing.module';
     components.PlaygroundBreadcrumb2Component,
     components.PlaygroundBreadcrumb3Component,
     components.PlaygroundBreadcrumbsComponent,
-    components.PlaygroundDirectivesComponent
+    components.PlaygroundDirectivesComponent,
+    components.PlaygroundToastComponent
   ],
   providers: [
     services.PlaygroundIndividualService

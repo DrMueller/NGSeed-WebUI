@@ -1,0 +1,2 @@
+Default Config scss not working
+PrimeNG Animations and Styling not working

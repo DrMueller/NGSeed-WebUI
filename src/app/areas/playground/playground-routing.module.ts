@@ -31,6 +31,7 @@ const routes: Routes = [
       { path: 'reflect', component: components.PlaygroundReflectComponent },
       { path: 'grid-builder', component: components.PlaygroundGridBuilderComponent },
       { path: 'directives', component: components.PlaygroundDirectivesComponent },
+      { path: 'toast', component: components.PlaygroundToastComponent },
       {
         path: 'security',
         children: [

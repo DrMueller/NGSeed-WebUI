@@ -2,7 +2,7 @@ import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/c
 import { Injectable } from '@angular/core';
 
 import { AdalInterceptor } from 'adal-angular4';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs/internal/Observable';
 
 import { EnvironmentService } from 'app/infrastructure/core-services/environment';
 

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import {
     Grid, GridBuilderService, RowStyleObject
-} from 'app/infrastructure/shared-features/ag-grid/ag-grid-building';
+} from 'app/infrastructure/shared-features/ag-grid';
 
 import { Individual } from '../../models';
 import { GridBuilder } from './grid.builder';
