@@ -19,8 +19,8 @@ export class BreadcrumbRouteFetchingService {
       filter(event => event instanceof NavigationEnd),
       distinctUntilChanged(),
       map(() => {
-        const tra = this.router.routerState.snapshot.root;
-        const entries = this.breadCrumBuilder.buildBreadCrumbs(tra);
+        const root = this.router.routerState.snapshot.root;
+        const entries = this.breadCrumBuilder.buildBreadCrumbs(root);
         callback(entries);
       })
     ).subscribe();
