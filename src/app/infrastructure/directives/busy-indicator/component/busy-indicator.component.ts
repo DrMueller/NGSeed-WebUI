@@ -1,5 +1,5 @@
 import { animate, style, transition, trigger } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 const inactiveStyle = style({
   opacity: 0,
@@ -23,9 +23,6 @@ const timing = '500ms ease';
     ])
   ]
 })
-export class BusyIndicatorComponent implements OnInit {
+export class BusyIndicatorComponent {
   public showIndicator: boolean;
-  constructor() { }
-  ngOnInit() {
-  }
 }
